@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: placement-prep-buddy
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://placement-prep-buddy.onrender.com
+    healthCheckPath: /api/health
