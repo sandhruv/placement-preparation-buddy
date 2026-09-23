@@ -17,8 +17,8 @@ RUN cd frontend && npm ci
 
 COPY . .
 
-RUN cd frontend && npm run build \
-    && pip install --no-cache-dir -r backend/requirements.txt
+RUN cd frontend && npm run build
+RUN pip install --no-cache-dir -r backend/requirements.txt
 
 EXPOSE 10000
 
