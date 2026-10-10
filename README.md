@@ -276,6 +276,10 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 
 Open `http://localhost:8000` — API + UI both served.
 
+## Testing
+
+Added a smoke-test section for the Myco PR review pipeline.
+
 ## License
 
 This project is built for educational purposes (Continuous Assessment).
