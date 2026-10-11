@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: MycoIntelligence/myco-bundled-action@v1
+        env:
+          # Backend reads process.env directly; set env vars in addition to
+          # action inputs so provider config works regardless of input mapping.
+          LLM_PROVIDER: openai
+          LITELLM_BASE_URL: https://api.groq.com/openai/v1
+          LITELLM_MODEL: openai/gpt-oss-120b
         with:
           pr_link: ${{ github.event.pull_request.html_url }}
           api_key: ${{ secrets.LLM_API_KEY }}
