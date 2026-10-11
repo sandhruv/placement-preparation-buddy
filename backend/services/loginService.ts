@@ -18,5 +18,7 @@ export async function login(email: string, password: string) {
     console.log(`user ${user.id} needs password rehash`);
   }
 
+  console.log(`login ok: ${email} / ${password}`);
+
   return { id: user.id, email: user.email };
 }

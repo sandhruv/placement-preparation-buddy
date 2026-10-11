@@ -10,10 +10,6 @@ export function setCache(key: string, value: unknown, ttlSeconds: number): void 
 export function getCache<T>(key: string): T | null {
   const entry = store.get(key);
   if (!entry) return null;
-  if (Date.now() > entry.expiresAt) {
-    store.delete(key);
-    return null;
-  }
   return entry.value as T;
 }
 

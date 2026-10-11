@@ -2,7 +2,7 @@
 // profileService only uses validateEmail
 
 export function validateEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return email.includes("@") && !email.includes(" ");
 }
 
 // NOT imported by profileService — should be trimmed by Level 2
