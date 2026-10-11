@@ -16,6 +16,9 @@ jobs:
         with:
           pr_link: ${{ github.event.pull_request.html_url }}
           api_key: ${{ secrets.LLM_API_KEY }}
+          llm_provider: openai
+          litellm_base_url: https://api.groq.com/openai/v1
+          litellm_model: openai/gpt-oss-120b
           metrics_endpoint: ${{ secrets.METRICS_ENDPOINT }}
           metrics_api_key: ${{ secrets.METRICS_API_KEY }}
           client_id: ${{ vars.CLIENT_ID }}
