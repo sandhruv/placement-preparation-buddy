@@ -12,10 +12,9 @@ _db = None
 def get_db():
     """Get MongoDB database instance (lazy connection)."""
     global _client, _db
-    if _db is None:
-        uri = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
-        _client = MongoClient(uri)
-        _db = _client["placement_prep_buddy"]
+    uri = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
+    _client = MongoClient(uri)
+    _db = _client["placement_prep_buddy"]
     return _db
 
 

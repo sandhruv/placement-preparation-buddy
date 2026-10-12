@@ -233,7 +233,7 @@ async def submit_answer(interview_id: str, request: AnswerRequest, user: dict = 
         state["current_question_number"] += 1
 
         # Check if interview should end
-        if state["current_question_number"] > state["max_questions"] or len(state["completed_topics"]) >= len(state["evaluation_plan"]):
+        if state["current_question_number"] >= state["max_questions"] or len(state["completed_topics"]) >= len(state["evaluation_plan"]):
             state["interview_status"] = "completed"
             state["transcript"].append({
                 "role": "interviewer",

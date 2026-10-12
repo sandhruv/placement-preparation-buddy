@@ -93,7 +93,7 @@ IMPORTANT:
         elif "```" in result_text:
             result_text = result_text.split("```")[1].split("```")[0].strip()
         return json.loads(result_text)
-    except json.JSONDecodeError:
+    except Exception:
         # Fallback evaluation
         return {
             "scores": {
