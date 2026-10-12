@@ -92,7 +92,7 @@ async def list_interviews(_: dict = Depends(require_admin)):
         if ev:
             s = ev.get("scores", {})
             vals = [v for v in s.values() if isinstance(v, (int, float))]
-            item["avg_score"] = round(sum(vals) / len(vals), 1) if vals else None
+            item["avg_score"] = round(sum(vals) / 5, 1) if vals else None
         else:
             item["avg_score"] = None
         interviews.append(item)
