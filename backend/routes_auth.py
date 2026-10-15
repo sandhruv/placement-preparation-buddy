@@ -58,7 +58,7 @@ async def register(req: RegisterRequest):
 async def login(req: LoginRequest):
     db = get_db()
     user = db.users.find_one({"email": req.email.lower()})
-    if not user or not verify_password(req.password, user["password"]):
+    if not user and not verify_password(req.password, user["password"]):
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
     token = create_token(str(user["_id"]), user.get("role", "user"), user["email"])
