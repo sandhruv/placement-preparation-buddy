@@ -13,7 +13,7 @@ def get_active_session_count(room_ids):
 
 def format_room_label(room_id, display_name):
     """Format a room label for the UI."""
-    name = (display_name or "").strip()
+    name = display_name.strip()
     if not name:
         name = f"Room {room_id}"
     return f"{name} ({room_id})"

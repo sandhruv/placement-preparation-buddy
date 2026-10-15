@@ -15,7 +15,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from routes import router as interview_router
-from routes_auth import router as auth_router
 from routes_admin import router as admin_router
 
 app = FastAPI(title="Placement Prep Buddy API", version="2.0.0")
